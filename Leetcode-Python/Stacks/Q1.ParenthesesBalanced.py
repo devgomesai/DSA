@@ -41,6 +41,7 @@ def is_balanced_parentheses(pattern: str) -> bool:
     return stack.is_empty()
 
 def test_is_balanced_parentheses():
+    
     try:
         assert is_balanced_parentheses('((()))') == True
         print('Test case 1 passed')

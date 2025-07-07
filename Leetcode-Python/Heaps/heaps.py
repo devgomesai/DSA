@@ -1,6 +1,6 @@
-# ---------
-# Max Heap (parent > children) 
-# ---------
+# ------------------------------------------------------------
+# Max Heap (parent > children)  O(log n) => remove() , insert()
+# -------------------------------------------------------------
 #           (100)
 #         /      \
 #      (99)       (75)
@@ -13,8 +13,9 @@
 # left_child_idx = 2 * parent_index + 1
 # right_child_idx = 2 * parent_index + 2
 
-# ------------------------------------------------------------------------------------------------------------------     
+# --------------------------------------------------------------
 class MaxHeap:
+    
     def __init__(self):
         self.heap = []
         
@@ -39,7 +40,7 @@ class MaxHeap:
         while current > 0 and self.heap[current] > self.heap[self._parent(current)]:
             self._swap(current, self._parent(current))                
             current = self._parent(current)
-            
+
     def _sink_down(self, index):
         max_index = index # get the head index i.e 0
         while True:
