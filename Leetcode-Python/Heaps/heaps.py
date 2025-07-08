@@ -70,23 +70,23 @@ class MaxHeap:
         
         return max_value
             
-    # def get_right_child(self, value):
-    #     try:
-    #         _index = self.heap.index(value)
-    #         _right_index = self._right_child(_index)
-    #         if _right_index < len(self.heap):
-    #             print(f"Right Child of {value}: {self.heap[_right_index]}")
-    #     except ValueError:
-    #         print(f"Value {value} not found in heap.")
+    def get_right_child(self, value):
+        try:
+            _index = self.heap.index(value)
+            _right_index = self._right_child(_index)
+            if _right_index < len(self.heap):
+                print(f"Right Child of {value}: {self.heap[_right_index]}")
+        except ValueError:
+            print(f"Value {value} not found in heap.")
         
-    # def get_left_child(self,value):
-    #     try:
-    #         _index = self.heap.index(value)
-    #         _left_index = self._left_child(_index)
-    #         if _left_index < len(self.heap):
-    #             print(f"Left Child of {value}: {self.heap[_left_index]}")
-    #     except ValueError:
-    #         print(f"Value {value} not found in heap.")
+    def get_left_child(self,value):
+        try:
+            _index = self.heap.index(value)
+            _left_index = self._left_child(_index)
+            if _left_index < len(self.heap):
+                print(f"Left Child of {value}: {self.heap[_left_index]}")
+        except ValueError:
+            print(f"Value {value} not found in heap.")
     
     
 # 100 99 75 58 72 61 18
