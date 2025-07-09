@@ -28,7 +28,6 @@ class Stack:
             return self.stack_list.pop()
 
 
-
 def is_balanced_parentheses(pattern: str) -> bool:
     stack = Stack()
     for char in pattern:

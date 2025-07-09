@@ -25,7 +25,7 @@ class Stack:
         if self.is_empty():
             return None
         self.stack_list.pop()
- 
+
             
             
             

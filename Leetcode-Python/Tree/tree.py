@@ -1,3 +1,4 @@
+# BinarySearchTree
 #         47
 #        /  \
 #      21    76
@@ -13,7 +14,7 @@ class Node:
 class BinarySearchTree:
     def __init__(self):
         self.root = None
-        
+
     def insert(self, value: int):
         node = Node(value=value)
         if self.root == None:
@@ -33,8 +34,7 @@ class BinarySearchTree:
                     temp.right = node
                     return True
                 temp = temp.right
-                
-                    
+
     def contains(self,val:int):
         temp = self.root
         while temp is not None:
@@ -58,7 +58,7 @@ class BinarySearchTree:
     # a func() to handle recursive contains()
     def r_contains(self, value:int):
         return self._r_contains(self.root, value)
-    
+
     # Recursive method for insert()
     def _r_insert(self, current_node:Node, value:int):
         if current_node == None:
@@ -68,7 +68,7 @@ class BinarySearchTree:
         if value > current_node.value:
             current_node.right = self._r_insert(current_node.right, value)
         return current_node
-    
+
     # a func() to handle recursive insert()
     def r_insert(self, value:int):
         if self.root == None:
@@ -82,25 +82,31 @@ class BinarySearchTree:
         return current_node.value
     
     def _r_delete_node(self, current_node, value):
+        # if not node i.e None so return None
         if current_node == None: 
             return None
+        # Go left if less 
         if value < current_node.value:
             current_node.left = self._r_delete_node(current_node.left, value)
+        # Go right if more
         elif value > current_node.value: 
             current_node.right = self._r_delete_node(current_node.right, value)
         else:
+            # leaf node
             if current_node.left == None and current_node.right == None:
                 return None
+            # if left is none go right
             elif current_node.left == None:
                 current_node = current_node.right
+            # if right is none go left
             elif current_node.right == None:
                 current_node = current_node.left
             else:
+                # got the node but has left and right => take the right tree's smallest and swap with current
                 sub_tree_min = self.min_value(current_node.right)
                 current_node.value = sub_tree_min
                 current_node.right = self._r_delete_node(current_node.right, sub_tree_min)
         return current_node
-    
     
     # a func() to handle recursive deletion()
     def r_delete_node(self, value:int):
