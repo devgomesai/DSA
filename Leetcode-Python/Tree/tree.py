@@ -140,7 +140,7 @@ class BinarySearchTree:
         results = []
         
         def traverse(current_node):
-            results.append(current_node.value) # mid
+            results.append(current_node.value) # mid (but also left , right based on recursion)
             
             if current_node.left is not None: # left recursion
                 traverse(current_node.left)
@@ -161,7 +161,7 @@ class BinarySearchTree:
             if current_node.right is not None: # right recursion
                 traverse(current_node.right)
                 
-            results.append(current_node.value) # mid
+            results.append(current_node.value) # mid (but also left , right based on recursion)
 
         traverse(self.root)
         return results
@@ -173,16 +173,14 @@ class BinarySearchTree:
             if current_node.left is not None: # left recursion
                 traverse(current_node.left)
                 
-            results.append(current_node.value) # mid
+            results.append(current_node.value) # mid (but also left , right based on recursion)
             
             if current_node.right is not None: # right recursion
                 traverse(current_node.right)
             
         traverse(self.root)
         return results
-        
-        
-        
+
 tree = BinarySearchTree()
 tree.insert(47)
 tree.insert(21)

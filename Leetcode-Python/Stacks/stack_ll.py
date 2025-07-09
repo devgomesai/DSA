@@ -17,12 +17,13 @@ class Stack:
         
     def push(self, value):
         node = Node(value)
-        if self.height == 0:
-            self.top = node
-        else:
-            node.next = self.top 
-            self.top = node
+        # giving the new_node ka next pointer to the pointer pointing to the top of stack
+        node.next = self.top
+        # make the new_node as top_of_stack
+        self.top = node
+        # incr as new_node added
         self.height += 1
+        return True
         
     def pop(self):
         if self.height == 0:
