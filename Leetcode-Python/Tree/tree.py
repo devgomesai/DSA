@@ -91,14 +91,14 @@ class BinarySearchTree:
         # Go right if more
         elif value > current_node.value: 
             current_node.right = self._r_delete_node(current_node.right, value)
-        else:
+        else: # got the node
             # leaf node
             if current_node.left == None and current_node.right == None:
                 return None
-            # if left is none go right
+            # if left is none but got right
             elif current_node.left == None:
                 current_node = current_node.right
-            # if right is none go left
+            # if right is none but  got left
             elif current_node.right == None:
                 current_node = current_node.left
             else:
@@ -112,6 +112,77 @@ class BinarySearchTree:
     def r_delete_node(self, value:int):
         self.root = self._r_delete_node(self.root, value)
 
+        
+    # BFS => Breath First Search
+    def BFS(self):
+        current_node = self.root
+        queue = []
+        result = []
+        queue.append(current_node)
+        
+        while len(queue) > 0:
+            current_node = queue.pop(0)
+            result.append(current_node.value)
+            if current_node.left is not None: # node's before leaf node
+                queue.append(current_node.left)
+            if current_node.right is not None:  # node's before leaf node
+                queue.append(current_node.right)
+        return result
+
+    # DFS => Depth First Search
+    # always go left -> right
+    # 1. PreOrder (Normal) : mid first
+    # 2. InOrder # mid between
+    # 3. PostOrder # mid at end
+    
+    # PreOrder (Normal) (mid, left , right) 
+    def pre_order_DFS(self):
+        results = []
+        
+        def traverse(current_node):
+            results.append(current_node.value) # mid
+            
+            if current_node.left is not None: # left recursion
+                traverse(current_node.left)
+                
+            if current_node.right is not None: # right recursion
+                traverse(current_node.right)
+        
+        traverse(self.root)
+        return results
+    
+    #  PostOrder (left, right , mid)
+    def post_order_DFS(self):
+        results = []
+        def traverse(current_node):
+            if current_node.left is not None: # left recursion
+                traverse(current_node.left)
+                
+            if current_node.right is not None: # right recursion
+                traverse(current_node.right)
+                
+            results.append(current_node.value) # mid
+
+        traverse(self.root)
+        return results
+    
+    # InOrder (left, mid, right) 
+    def in_order_DFS(self):
+        results = []
+        def traverse(current_node):
+            if current_node.left is not None: # left recursion
+                traverse(current_node.left)
+                
+            results.append(current_node.value) # mid
+            
+            if current_node.right is not None: # right recursion
+                traverse(current_node.right)
+            
+        traverse(self.root)
+        return results
+        
+        
+        
 tree = BinarySearchTree()
 tree.insert(47)
 tree.insert(21)
@@ -120,6 +191,7 @@ tree.insert(18)
 tree.insert(27)
 tree.insert(52)
 tree.insert(82)
+
 
 print(tree.contains(27)) # True
 print(tree.contains(8)) # False
@@ -130,41 +202,46 @@ print(tree.min_value(tree.root)) # 18
 print(tree.min_value(tree.root.left)) # 18
 print(tree.min_value(tree.root.right)) # 52
 
-tree1 = BinarySearchTree()
-tree1.r_insert(2)
-tree1.r_insert(1)
-tree1.r_insert(3)
+print("On applying BFS : ",tree.BFS())
+print("On applying DFS (PreOrder) : ",tree.pre_order_DFS())
+print("On applying DFS (PostOrder) : ",tree.post_order_DFS())
+print("On applying DFS (InOrder) : ",tree.in_order_DFS())
 
-print(tree1.r_contains(1)) # True
+# tree1 = BinarySearchTree()
+# tree1.r_insert(2)
+# tree1.r_insert(1)
+# tree1.r_insert(3)
 
-print("\nRoot: ", tree1.root.value)
-print("Root -> Left: ", tree1.root.left.value)
-print("Root -> Right: ", tree1.root.right.value)
+# print(tree1.r_contains(1)) # True
 
-tree = BinarySearchTree()
-tree.r_insert(2)
-tree.r_insert(1)
-tree.r_insert(3)
+# print("\nRoot: ", tree1.root.value)
+# print("Root -> Left: ", tree1.root.left.value)
+# print("Root -> Right: ", tree1.root.right.value)
 
-"""
-        2
-       / \
-      1   3
-"""
-print("Root: ", tree.root.value)
-print("Root -> Left: ", tree.root.left.value)
-print("Root -> Right: ", tree.root.right.value)
+# tree = BinarySearchTree()
+# tree.r_insert(2)
+# tree.r_insert(1)
+# tree.r_insert(3)
 
-tree.r_delete_node(2)
+# """
+#         2
+#        / \
+#       1   3
+# """
+# print("Root: ", tree.root.value)
+# print("Root -> Left: ", tree.root.left.value)
+# print("Root -> Right: ", tree.root.right.value)
 
-"""
-        3
-       / \
-      1   None
-"""
+# tree.r_delete_node(2)
 
-print("Root: ", tree.root.value)
-print("Root -> Left: ", tree.root.left.value)
-print("Root -> Right: ", tree.root.right)
+# """
+#         3
+#        / \
+#       1   None
+# """
+
+# print("Root: ", tree.root.value)
+# print("Root -> Left: ", tree.root.left.value)
+# print("Root -> Right: ", tree.root.right)
 
 
