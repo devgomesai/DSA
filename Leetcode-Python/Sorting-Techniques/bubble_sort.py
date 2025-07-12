@@ -4,7 +4,6 @@ def BubbleSort(nums:list): # the list gets sorted from back
         for j in range(i):
             if nums[j] > nums[j+1]:
                 nums[j], nums[j+1] = nums[j+1], nums[j]
-    
     return nums
     
     

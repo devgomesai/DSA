@@ -45,7 +45,7 @@ class BinarySearchTree:
         self.root = self.__sorted_list_to_bst(nums, 0, len(nums) - 1)
 
     def __sorted_list_to_bst(self, nums, left, right):
-        # 
+         
         if left > right:
             return None
             
