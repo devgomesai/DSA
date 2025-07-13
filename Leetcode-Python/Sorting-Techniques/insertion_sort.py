@@ -1,3 +1,4 @@
+# Time Complexity : O(n^2)
 def InsertionSort(nums:list): # select second ele compare with left ele and if less than swap then next (same)
     for i in range(1, len(nums)):
         temp = nums[i]

@@ -1,3 +1,4 @@
+# Time Complexity : O(n^2)
 def SelectionSort(nums: list):
     for i in range(len(nums) - 1): # assuming that i'th index is the min_value
         min_index = i

@@ -1,3 +1,4 @@
+# Time Complexity : O(n^2)
 def BubbleSort(nums:list): # the list gets sorted from back
     # decrements the comparison of ele by sorting from end last_ele = 5 comparison , second_last = 4 comparison (last last ele is sorted) ...
     for i in range(len(nums)-1, 0, -1): 
