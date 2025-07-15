@@ -28,8 +28,5 @@ def QuickSort(nums:list, left_, right_):
 def __quick_sort_helper_func__(nums):
     return QuickSort(nums, 0, len(nums)-1)
 
-print('--'*5+' QuickSort '+'--'*5)
-
 nums = [4, 6, 1, 7, 3, 2, 5]    
-print('Original List :', nums)
-print('Sorted List (QuickSort): ',__quick_sort_helper_func__(nums=nums))
+print(__quick_sort_helper_func__(nums=nums))
