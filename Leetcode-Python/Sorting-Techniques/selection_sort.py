@@ -8,8 +8,8 @@ def SelectionSort(nums: list):
         # on iterating over the list to find min_index if i == min_index that means its already sorted
         if i != min_index:
             # only swap if change in min_index
-            nums[j], nums[min_index] = nums[min_index], nums[j]
-
+            nums[i], nums[min_index] = nums[min_index], nums[i]
+    return nums
 
 nums = [4, 2, 6, 5, 1, 3]
 print(SelectionSort(nums=nums))
