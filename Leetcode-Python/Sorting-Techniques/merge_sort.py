@@ -3,7 +3,6 @@
 # Time Complexity : O(log n) + O(n) = O(n log n)
 # Breaking it is O(log n) and then combining them is O(n)
 
-
 def merge(list1: list, list2: list):
     combined = []
     i = 0 
