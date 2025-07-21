@@ -3,6 +3,7 @@ from basics_maths import *
 # --------- Prime Number Tests ---------
 
 def test_basic_primes():
+    
     assert checkPrime(2) == True
     assert checkPrime(3) == True
     assert checkPrime(5) == True

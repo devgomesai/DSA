@@ -10,12 +10,13 @@ import math
 
 # get the digits and print in the reverse order
 def reverse_of_a_number(n):
+    # n = 79
     revNum = 0 
     count = 0
     while n > 0:
         count += 1
-        l = n % 10
-        revNum = (revNum * 10) + l
+        l = n % 10 # 9
+        revNum = (revNum * 10) + l # 9
         n = n // 10
     print("Reverse Number: ", revNum)
     print("Number of Digits: ", count)
@@ -23,9 +24,7 @@ def reverse_of_a_number(n):
 
 # Check Palindrome
 def check_palindrome(n):
-    if reverse_of_a_number(n) == n:
-        return True
-    return False
+    return reverse_of_a_number(n) == n
 
 
 #  Armstrong Number
@@ -49,6 +48,7 @@ def isArmstrong(n): # each digit with the power of the total len
     return n1 == sum_
 
 def get_all_divisors(n):
+    # Refer the image.png
     list_ = []
     # Optimal Way: SQRT(n)
     sqrt_n = int(math.sqrt(n))
@@ -57,11 +57,11 @@ def get_all_divisors(n):
     for i in range(1,  sqrt_n + 1):
         # 36 % (1,2,3,4,5,6) => [1,2,3,4,6]
         if n % i == 0:
-            list_.append(i)
+            list_.append(i) # divisors
             # i => (1,2,3,4)  36 // i => [36,18,12,9]   
             # why no 6 => 6 != 36 // 6 = 6 : 6 != 6 False 
-            if i != n // i:
-                list_.append(n//i)
+            if i != n // i: 
+                list_.append(n//i) # quotient
             
     return sorted(list_)
 

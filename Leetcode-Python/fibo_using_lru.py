@@ -17,7 +17,7 @@ def fibonacci(n, store={}):
     if n <= 1:
         return n
     
-    store[n] = fibonacci(n-1, store) + fibonacci(n-2, store)
+    store[n] = fibonacci(n-1) + fibonacci(n-2)
     return store[n]
 
-print(fibonacci(13))
+print(fibonacci(45))
