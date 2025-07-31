@@ -17,7 +17,7 @@ def reverse_of_a_number(n):
         count += 1
         l = n % 10 # 9
         revNum = (revNum * 10) + l # 9
-        n = n // 10
+        n = n // 10 # 7
     print("Reverse Number: ", revNum)
     print("Number of Digits: ", count)
     return revNum

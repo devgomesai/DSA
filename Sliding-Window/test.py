@@ -1,8 +1,6 @@
-# arr = [3,2,7,5,9,6,2]
-# k = 6
-# print(arr[:k]) # [3, 2, 7, 5, 9, 6]
-# print(arr[k:]) # [2]
-
+# nums = [2,7,11,15], target = 9
+# seen = {2: 0}
+# return [0, 1]
 from typing import List
 def two_sum(nums:List[int], target:int):
     seen = {}
@@ -12,3 +10,6 @@ def two_sum(nums:List[int], target:int):
             return [seen[diff], i]
         else:
             seen[num] = i
+            
+            
+            
