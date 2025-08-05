@@ -8,6 +8,17 @@ import math
 # print(n / d)
 # print(n // d)
 
+# Count the number of digits
+n = 4563
+
+def get_count_of_digits(n:int):
+    
+    cnt = int(math.log10(n)+1)
+    
+    return cnt
+    
+# print(int(math.log10(n)+1))
+
 # get the digits and print in the reverse order
 def reverse_of_a_number(n):
     # n = 79
@@ -59,7 +70,7 @@ def get_all_divisors(n):
         if n % i == 0:
             list_.append(i) # divisors
             # i => (1,2,3,4)  36 // i => [36,18,12,9]   
-            # why no 6 => 6 != 36 // 6 = 6 : 6 != 6 False 
+            # why no 6 => 6 != 36 // 6 = 6 : 6 != 6 False already done so
             if i != n // i: 
                 list_.append(n//i) # quotient
             
@@ -68,16 +79,18 @@ def get_all_divisors(n):
 def checkPrime(n):
     # A number that has exactly 2 factors (1 and n)
     # as 1 is not prime 
+    # n = 5
     if n <= 1:
         return False
     
-    sqrt_ = int(math.sqrt(n))
-    count = 0
+    sqrt_ = int(math.sqrt(n)) # 2
+    count = 0 # total numbers divisible
     for i in range(1, sqrt_+1):
         if n % i == 0:
             count += 1
             if n // i != i:
                 count += 1
+    
     if count == 2:  
         return True
     
@@ -94,9 +107,9 @@ def gcd(n1, n2):
     # Factors : n2 = {1, 2, 3, 4, 6, 12}
     # GCD(n1, n2)  = {3}
     
-    while n2 !=0:
+    while n2 != 0:
         n1, n2 = n2, n1 % n2
-    
     return abs(n1)
-        
+
+print(gcd(20, 15))
     

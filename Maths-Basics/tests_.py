@@ -83,3 +83,11 @@ def test_gcd_negative_inputs():
     assert gcd(-25, -5) == 5
     assert gcd(-10, 15) == 5
     assert gcd(10, -15) == 5
+    
+# ----------- Get Count --------------
+
+def test_cnt_digits():               
+    assert get_count_of_digits(5) == 1                # Single digit: positive
+    assert get_count_of_digits(10) == 2               # Two digits            
+    assert get_count_of_digits(99999) == 5            # Five digits
+    assert get_count_of_digits(1234567890) == 10      # Ten digits
