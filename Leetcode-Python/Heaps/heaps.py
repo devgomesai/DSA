@@ -37,6 +37,7 @@ class MaxHeap:
         # get the index of the appended value from the arr i.e the current pointer
         current = len(self.heap) - 1
         
+        # while the heap[current] is greater than its parent then make heap[current] as parent
         while current > 0 and self.heap[current] > self.heap[self._parent(current)]:
             self._swap(current, self._parent(current))                
             current = self._parent(current)
@@ -69,24 +70,6 @@ class MaxHeap:
         self._sink_down(0) # sink the top value based on prev code to sort the max-heap
         
         return max_value
-            
-    def get_right_child(self, value):
-        try:
-            _index = self.heap.index(value)
-            _right_index = self._right_child(_index)
-            if _right_index < len(self.heap):
-                print(f"Right Child of {value}: {self.heap[_right_index]}")
-        except ValueError:
-            print(f"Value {value} not found in heap.")
-        
-    def get_left_child(self,value):
-        try:
-            _index = self.heap.index(value)
-            _left_index = self._left_child(_index)
-            if _left_index < len(self.heap):
-                print(f"Left Child of {value}: {self.heap[_left_index]}")
-        except ValueError:
-            print(f"Value {value} not found in heap.")
     
     
 # 100 99 75 58 72 61 18
@@ -98,7 +81,6 @@ max_heap.insert(58)
 max_heap.insert(72)
 max_heap.insert(61)
 max_heap.insert(18)
-max_heap.insert(97)
 
 print(max_heap.heap)
     

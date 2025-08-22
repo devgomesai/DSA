@@ -2,6 +2,7 @@
 # Space Complexity: O(n)
 # Time Complexity : O(log n) + O(n) = O(n log n)
 # Breaking it is O(log n) and then combining them is O(n)
+import time
 
 def merge(list1: list, list2: list):
     combined = []
@@ -22,11 +23,9 @@ def merge(list1: list, list2: list):
     while j < len(list2):
         combined.append(list2[j])
         j += 1
-        
     return combined
 
 def MergeSort(nums: list):
-    
     # 2. Base Case: when len(the_list) is 1
     if len(nums) == 1:
         return nums

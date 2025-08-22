@@ -6,7 +6,7 @@
 def swap(nums, index1, index2):
     nums[index1], nums[index2] = nums[index2], nums[index1]
 
-# *** Finding the pivot index func() ***
+# *** Finding the pivot  ***
 def pivot(nums, pivot_index, end_index):
     # initially we assume pivot as idx = 0
     swap_index = pivot_index
@@ -25,13 +25,13 @@ def QuickSort(nums:list, left_, right_):
     if left_ < right_:
         pivot_point = pivot(nums,left_,right_)
         QuickSort(nums, left_, pivot_point-1)
-        QuickSort(nums, pivot_point+1   , right_)
+        QuickSort(nums, pivot_point+1, right_)
 
 
 def __quick_sort_helper_func__(nums):
     QuickSort(nums, 0, len(nums)-1)
 
-nums = [1,2,4,3,5,6,7]   
+nums = [4,5,7,2,1,3,9]   
 print('Original list: ', nums) 
 __quick_sort_helper_func__(nums=nums)
 print('After Sorting: ',nums)

@@ -101,11 +101,11 @@ print(check_palindrome(s, 0))
 
 # # Q8.  Fibonacci Series
 
-# def fib_r(n):
-#     if n in (0,1):
-#         return n
-#     return fib_r(n-1) + fib_r(n-2)
+def fib_r(n):
+    if n in (0,1):
+        return n
+    return fib_r(n-1) + fib_r(n-2)
     
     
-# print(fib_r(5))
+print(fib_r(5))
 
