@@ -42,6 +42,7 @@ class MaxHeap:
             self._swap(current, self._parent(current))                
             current = self._parent(current)
 
+    # Balance the Tree on removal
     def _sink_down(self, index):
         max_index = index # get the head index i.e 0
         while True:
@@ -82,8 +83,22 @@ max_heap.insert(72)
 max_heap.insert(61)
 max_heap.insert(18)
 
-print(max_heap.heap)
-    
-# max_heap.remove()
+#           (100)
+#         /      \
+#      (99)       (75)
+#     /   \       /  \ 
+#  (58)   (72)  (61) (18)
 
-# print(max_heap.heap)
+print(max_heap.heap)
+
+max_heap.remove()
+
+print("After the Removal of the head: ")
+print(max_heap.heap)
+
+#         (99)
+#        /    \
+#     (72)    (75)
+#    /  \      /
+#  (58) (18) (61)
+
