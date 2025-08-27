@@ -8,7 +8,7 @@ def InsertionSort(nums:list): # select second ele compare with left ele and if l
         while temp < nums[j] and j > -1:
             nums[j+1] = nums[j]
             nums[j] = temp
-            j -= 1  
+            j -= 1
     return nums
 
 

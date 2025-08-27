@@ -1,37 +1,27 @@
-# In QuickSort we start with a pivot point i.e the first item   
+# In QuickSort we start with a pivot point i.e the last ele
 # O(n) => pivot func() as it traverses the list
 # O(log n) => as you divide the list and then sort recursive call
-# O(n^2) => if list is already sorted
+# O(n^2) => if list is already sorted => bad pivot
+# O(n*logn) => avg case w
 
-def swap(nums, index1, index2):
-    nums[index1], nums[index2] = nums[index2], nums[index1]
-
-# *** Finding the pivot  ***
-def pivot(nums, pivot_index, end_index):
-    # initially we assume pivot as idx = 0
-    swap_index = pivot_index
+def quicksort(arr:list):
     
-    for i in range(pivot_index+1, end_index+1):
-        if nums[i] < nums[pivot_index]:
-            swap_index += 1
-            swap(nums, swap_index, i)
-            # print(nums)
-    swap(nums, pivot_index, swap_index)
-    # print(nums) 
-    return swap_index # this is your mid_idx (pivot_point)
-
-# QuickSort func()
-def QuickSort(nums:list, left_, right_):
-    if left_ < right_:
-        pivot_point = pivot(nums,left_,right_)
-        QuickSort(nums, left_, pivot_point-1)
-        QuickSort(nums, pivot_point+1, right_)
+    # Base case: 1 or 0 item in the list
+    if len(arr) <= 1:
+        return arr
+    
+    # Setting last ele as pivot
+    pivot = arr[-1]
+    
+    #
+    left = [x for x in arr[:-1] if x <= pivot]
+    right =[x for x in arr[:-1] if x > pivot]
+    
+    return quicksort(left) + [pivot] + quicksort(right)
 
 
-def __quick_sort_helper_func__(nums):
-    QuickSort(nums, 0, len(nums)-1)
 
 nums = [4,5,7,2,1,3,9]   
 print('Original list: ', nums) 
-__quick_sort_helper_func__(nums=nums)
+nums = quicksort(nums)
 print('After Sorting: ',nums)
