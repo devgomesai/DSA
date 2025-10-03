@@ -25,7 +25,6 @@ class Graph:
                 self.adj_list[v1].remove(v2) 
                 self.adj_list[v2].remove(v1) 
             except ValueError as err:
-                # print(err) # list.remove(x): x not in list
                 pass
             return True
         return False
@@ -56,15 +55,7 @@ my_graph.add_edges('A','D')
 my_graph.add_edges('B','D')
 my_graph.add_edges('C','D')
 
-
-# print('-'*15, "Before", '-'*15)
-# my_graph.show_graph()
-# # Remove a vertex
-# my_graph.remove_vertex('D')
-# print('-'*15, "After Removal of 'D' vertex", '-'*15)
-# my_graph.show_graph()
-# print('-'*15)
-
+# Remove the edges
 my_graph.remove_edge('B','C')
 my_graph.show_graph()
         

@@ -10,18 +10,19 @@ def quicksort(arr:list):
     if len(arr) <= 1:
         return arr
     
-    # Setting last ele as pivot
-    pivot = arr[-1]
+    # Setting last ele as pivot / middile ele / first ele
+    # Set first ele as pivot
+    pivot = arr[0]
     
-    #
-    left = [x for x in arr[:-1] if x <= pivot]
-    right =[x for x in arr[:-1] if x > pivot]
+    
+    left = [x for x in arr[1:] if x <= pivot]
+    right = [x for x in arr[1:] if x > pivot]
     
     return quicksort(left) + [pivot] + quicksort(right)
 
 
 
-nums = [4,5,7,2,1,3,9]   
+nums = [4,5,7,2,1,3,6]   
 print('Original list: ', nums) 
 nums = quicksort(nums)
 print('After Sorting: ',nums)

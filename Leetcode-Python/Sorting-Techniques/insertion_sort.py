@@ -2,7 +2,7 @@
 def InsertionSort(nums:list): # select second ele compare with left ele and if less then swap (same)
     for i in range(1, len(nums)):
         # storing purpose only then on swap used
-        temp = nums[i]
+        temp = nums[i] # 2
         # i = j+1
         j = i-1
         while temp < nums[j] and j > -1:

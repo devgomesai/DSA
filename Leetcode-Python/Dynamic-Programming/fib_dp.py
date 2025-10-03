@@ -1,19 +1,22 @@
 memo = [None] * 100
 counter= 0
-def fib(n):
+
+def fib(n: int):
     global counter
     counter += 1
+    
     if memo[n] is not None:
         return memo[n]
     
+    # base case 
     if n == 0 or n == 1:
         return n
-
-    memo[n] = fib(n-1) + fib(n-2)
+    
+    memo[n] = fib(n=n-1) + fib(n=n-2)
     
     return memo[n]
 
-n = 30
+n = 900
 print('\nFib of ',n,'=',fib(n))
 print('\nCounter: ',counter)
 

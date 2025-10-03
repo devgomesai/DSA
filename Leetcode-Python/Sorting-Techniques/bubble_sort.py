@@ -2,10 +2,9 @@
 def BubbleSort(nums:list): # the list gets sorted from back
     # decrements the comparison of ele by sorting from end last_ele = 5 comparison , second_last = 4 comparison (last last ele is sorted) ...
     for i in range(len(nums)-1, 0, -1): # back type loop
-        for j in range(i):
+        for j in range(i): # 0 -> 4
             if nums[j] > nums[j+1]:
                 nums[j], nums[j+1] = nums[j+1], nums[j]
-                print(nums)
     return nums
 
 # def BubbleSort(nums: list):

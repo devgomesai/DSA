@@ -1,4 +1,8 @@
 class Stack:
+    
+    def __repr__(self) -> str:
+        return "Implementation of Stack"
+    
     def __init__(self):
         self.stack_list = []
 
@@ -30,9 +34,11 @@ class Stack:
             
             
 my_stack = Stack()
+print("Stack Initialization: ", my_stack.stack_list)
 my_stack.push(1)
 my_stack.push(2)
 my_stack.push(3)
+print("after push into Stack : ", my_stack.stack_list)
 
 print("Stack before pop():")
 my_stack.print_stack()

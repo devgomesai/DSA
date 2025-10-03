@@ -1,10 +1,15 @@
 # Stack: LIFO (Last in First Out)
+from dataclasses import dataclass
 class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
 
+@dataclass
 class Stack:
+    
+    def __repr__(self) -> str:
+        return ("This is an Implemenation of Stack using Linked List")
     
     def __init__(self, value) -> None:
         node = Node(value)
@@ -40,6 +45,7 @@ class Stack:
     
 if __name__ == '__main__':
     st = Stack(10)
+    print(dir(st))
     print("height:",st.height)
     st.push(3)
     st.print_stack()

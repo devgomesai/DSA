@@ -7,7 +7,7 @@ def minMaxDifference(num: int) -> int:
     print(max_value_nums)  # "99899"
     min_value_nums = int(num_str.replace(min(num_str),min_value))
     print(min_value_nums) # 00890
-
+    
     return max_value_nums - min_value_nums
 
 

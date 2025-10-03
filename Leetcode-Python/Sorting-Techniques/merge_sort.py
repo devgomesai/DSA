@@ -2,7 +2,6 @@
 # Space Complexity: O(n)
 # Time Complexity : O(log n) + O(n) = O(n log n)
 # Breaking it is O(log n) and then combining them is O(n)
-import time
 
 def merge(list1: list, list2: list):
     combined = []

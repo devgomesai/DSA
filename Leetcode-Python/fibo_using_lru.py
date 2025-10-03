@@ -2,22 +2,22 @@ from functools import lru_cache
 
 @lru_cache
 def fib(n):
-    if n <= 1:
+    if n in (1, 0):
         return n
     return fib(n-1) + fib(n-2)
 
-print(fib(13))
+print(fib(1))
 
 # Create a dict and cal fibonacci
 
-def fibonacci(n, store={}):
-    if n in store:  
-        return store[n]
+# def fibonacci(n, store={}):
+#     if n in store:  
+#         return store[n]
     
-    if n <= 1:
-        return n
+#     if n <= 1:
+#         return n
     
-    store[n] = fibonacci(n-1) + fibonacci(n-2)
-    return store[n]
+#     store[n] = fibonacci(n-1) + fibonacci(n-2)
+#     return store[n]
 
-print(fibonacci(45))
+# print(fibonacci(45))

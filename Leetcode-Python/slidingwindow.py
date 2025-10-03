@@ -1,12 +1,12 @@
-# # O(n·k)
+#  O(n·k)
 def window_arr1(arr:list, k:int):
-    sum_ele = []
+    sub_arr = []
     i  = 0
     while k <= len(arr):
-        sum_ele.append(arr[i:k])
+        sub_arr.append(arr[i:k])
         i  += 1
         k += 1
-    return sum_ele
+    return sub_arr
 
 # Better Sliding Window
 def window_arr2(arr: list, k:int):
@@ -14,21 +14,18 @@ def window_arr2(arr: list, k:int):
     
     # Base Case
     if len(arr) < k:
-        return
+        return arr
     
-    slice_wind = arr[:k]
-    sub_arr.append(slice_wind)
-    
+    sub_arr.append(arr[:k])
+    #              (3, 9)
     for i in range(k, len(arr)):
         
-        slice_wind = arr[i-k+1 : i+1] 
-        
-        sub_arr.append(slice_wind)
+        sub_arr.append(arr[i-k+1 : i+1] )
         
     return sub_arr
 
 arr = [5, 3, 2, 1, 3, 3, 7, 2, 2] # 9
-k = 3
-print(arr)
+k = 4
+print("Original Array: ",arr)
 print(window_arr1(arr, k))
 print(window_arr2(arr, k))

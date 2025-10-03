@@ -37,7 +37,6 @@ def reverse_of_a_number(n):
 def check_palindrome(n):
     return reverse_of_a_number(n) == n
 
-
 #  Armstrong Number
 
 #   Example 1:
