@@ -1,5 +1,7 @@
+from dataclasses import dataclass
+
+@dataclass
 class Queue:
-    
     def __init__(self) -> None:
         self.queue = []
     
@@ -15,6 +17,10 @@ class Queue:
         for item in self.queue:
             print(f"{item} | ", end=" ")
         print('\n')
+    
+    def __print_func_class_attributes(self):
+        return list(dir(self.__class__))
+    
 
 if __name__ == '__main__':
     queue = Queue()
@@ -22,6 +28,8 @@ if __name__ == '__main__':
     queue.add(2)
     queue.add(3)
     queue.add(4)
+    
+    print(queue._Queue__print_func_class_attributes())
     
     queue.print_queue()
     

@@ -2,7 +2,7 @@
 ''' #DESCRIPTION#:  add the prev/ prefix values to the current value eg:
             arr = [1,3,6,10,15,21,18]
             so arr[1] = 1 + 3 = 4
-            arr[2] = 1+3+6= 10.....
+            arr[2] = 4+6= 10.....
             so new arr will be arr =[4,10.....]
 '''
 def create_prefix_sum(arr):

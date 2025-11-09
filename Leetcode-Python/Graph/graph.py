@@ -1,4 +1,5 @@
 class Graph:
+    
     def __init__(self) -> None:
         self.adj_list = {}
         
@@ -37,8 +38,7 @@ class Graph:
             return True
         return False
 
-        
-    
+
 # Initialize the Graph
 my_graph = Graph()
 

@@ -36,7 +36,7 @@ class HashTable:
             print(str(key) + ": ", val)
         
 my_has_table = HashTable()
-
+print("Initialzed Map: ", my_has_table.data_map)
 my_has_table.set_item('John',200)   
 my_has_table.set_item('Martha',1600)
 my_has_table.set_item('Luke',1130)
@@ -47,7 +47,4 @@ print(my_has_table.get_item('Mark'))
 
 # print(my_has_table.keys())
 my_has_table.print_table()
-
-
-        
-        
+print(my_has_table.keys())

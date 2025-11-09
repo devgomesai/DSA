@@ -3,10 +3,10 @@
 # // => floor division
 import math
 # d = 2
-
-# print(n % d)
-# print(n / d)
-# print(n // d)
+# n = 3
+# print(n % d) => 1
+# print(n / d) => 1.5
+# print(n // d) => 1
 
 # Count the number of digits
 n = 4563
@@ -34,6 +34,8 @@ def reverse_of_a_number(n):
     return revNum
 
 # Check Palindrome
+
+
 def check_palindrome(n):
     return reverse_of_a_number(n) == n
 

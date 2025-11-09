@@ -12,8 +12,7 @@ def buy_and_sell_stock(nums: list):
         profit = max(profit, cost)
         # get the updated min_val
         mini_val = min(mini_val, nums[i])
-        
+            
     return profit
-        
     
 print("maximum profit: ", buy_and_sell_stock(nums=arr))

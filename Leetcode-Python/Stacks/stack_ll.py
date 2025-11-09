@@ -45,7 +45,6 @@ class Stack:
     
 if __name__ == '__main__':
     st = Stack(10)
-    print(dir(st))
     print("height:",st.height)
     st.push(3)
     st.print_stack()

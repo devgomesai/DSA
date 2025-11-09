@@ -1,15 +1,15 @@
 import heapq
 
-class ListNode:
+class Node:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
         
 def build_linked_list(arr):
-    dummy = ListNode()
+    dummy = Node()
     current = dummy
     for val in arr:
-        current.next = ListNode(val)
+        current.next = Node(val)
         current = current.next
     return dummy.next
 
@@ -24,7 +24,7 @@ def mergeKLists(lists):
         if l:
             heapq.heappush(heap, (l.val, i, l))
     
-    dummy = ListNode()
+    dummy = Node()
     current = dummy
     
     while heap:
@@ -39,7 +39,7 @@ def mergeKLists(lists):
             
 def print_linked_list(head):
     while head:
-        print(head.val, end=" -> " if head.next else "\n")
+        print(head.val, end=" -> " if head.next else "\n") 
         head = head.next
 
 
@@ -47,5 +47,9 @@ def print_linked_list(head):
 # Convert each list to a linked list
 lists = [[1, 4, 5], [1, 3, 4], [2, 6]]
 linked_lists = [build_linked_list(l) for l in lists]
+# Print the linked lists
+for list in linked_lists:
+    print_linked_list(list)
 
-print(print_linked_list(mergeKLists(linked_lists)))
+# After Mergered-K-Lists
+# print(print_linked_list(mergeKLists(linked_lists)))

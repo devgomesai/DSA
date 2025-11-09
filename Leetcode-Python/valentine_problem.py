@@ -19,20 +19,21 @@ def find_unique_id(ids_:list):
 number = find_unique_id(ids_= members)
 print(number)
 # Approach 2: Using Count Frequency 
-# def find_unique_id_(ids_:list):
+def find_unique_id_(ids_:list):
     
-#     hashmap = {}
+    hashmap = {}
     
-#     for id in ids_:
-#         # print(hashmap)
-#         hashmap[id] = hashmap.get(id, 0) + 1
+    for id in ids_:
+        hashmap[id] = hashmap.get(id, 0) + 1
         
-#     print(hashmap)
     
-#     for key, val in hashmap.items():
-#         if val == 1:
-#             return key
+    for key, val in hashmap.items():
+        if val == 1:
+            return key
     
 
-# number = find_unique_id_(ids_= members)
-# print(number)
+number = find_unique_id_(ids_= members)
+print(number)
+
+
+
