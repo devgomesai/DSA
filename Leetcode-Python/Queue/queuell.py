@@ -19,7 +19,7 @@ class Queue:
         print('\n')
     
     def __print_func_class_attributes(self):
-        return list(dir(self.__class__))
+        return list[str](dir(self.__class__))
     
 
 if __name__ == '__main__':

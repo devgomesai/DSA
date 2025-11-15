@@ -20,7 +20,7 @@ def get_unique_element(nums: list):
 # print(get_unique_element(nums=nums))
 
 
-arr = [1, 1, 2, 2, 3, 3, 4, 4, 8]  # All elements appear twice except 4
+arr = [1, 2, 1, 2, 3, 3, 4, 4, 8]  # All elements appear twice except 4
 
 
 def __get_unique_ele_from__arr__(nums: list):
@@ -29,5 +29,5 @@ def __get_unique_ele_from__arr__(nums: list):
         ele ^= num
     
     return ele
-# print(__get_unique_ele_from__arr__(nums=arr))
+print(__get_unique_ele_from__arr__(nums=arr))
 
