@@ -1,4 +1,4 @@
-# 🐍 DSA-Python
+# 🐍 DSA
 
 A curated collection of LeetCode problem solutions implemented in clean, beginner-to-advanced level **Python** for mastering **Data Structures and Algorithms**.
 
