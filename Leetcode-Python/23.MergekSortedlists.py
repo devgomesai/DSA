@@ -24,15 +24,19 @@ def mergeKLists(lists):
         if l:
             heapq.heappush(heap, (l.val, i, l))
     
+    # creating new ll
     dummy = Node()
+    # pointer for traversing
     current = dummy
     
     while heap:
+        # pop the head
         val, i, node = heapq.heappop(heap)
+        
         current.next = node
         current = current.next
         
-        if node.next:
+        if node.next: # if the ll has a next node then push it
             heapq.heappush(heap, (node.next.val, i, node.next))
             
     return dummy.next
@@ -43,7 +47,6 @@ def print_linked_list(head):
         head = head.next
 
 
-
 # Convert each list to a linked list
 lists = [[1, 4, 5], [1, 3, 4], [2, 6]]
 linked_lists = [build_linked_list(l) for l in lists]
@@ -52,4 +55,4 @@ for list in linked_lists:
     print_linked_list(list)
 
 # After Mergered-K-Lists
-# print(print_linked_list(mergeKLists(linked_lists)))
+print(print_linked_list(mergeKLists(linked_lists)))
