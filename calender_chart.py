@@ -1,5 +1,5 @@
 # import calendar
-import random 
+import random
 
 # yy = 2026
 # mm = 10
