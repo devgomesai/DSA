@@ -70,7 +70,7 @@ def get_all_divisors(n):
         # 36 % (1,2,3,4,5,6) => [1,2,3,4,6]
         if n % i == 0:
             list_.append(i) # divisors
-            # i => (1,2,3,4)  36 // i => [36,18,12,9]   
+            # i => (1,2,3,4,6)  36 // i => [36,18,12,9,6]   
             # why no 6 => 6 != 36 // 6 = 6 : 6 != 6 False already done so
             if i != n // i: 
                 list_.append(n//i) # quotient
@@ -113,4 +113,4 @@ def gcd(n1, n2):
     return abs(n1)
 
 print(gcd(20, 15))
-    
+ 
