@@ -43,7 +43,7 @@ def check_palindrome(n):
 
 #   Example 1:
 #                 Input:N = 153
-               
+
 #                 Output:True
                 
 #                 Explanation: 1^3+5^3+3^3= 1 + 125 + 27 = 153
@@ -112,5 +112,9 @@ def gcd(n1, n2):
         n1, n2 = n2, n1 % n2
     return abs(n1)
 
-print(gcd(20, 15))
- 
+if __name__ == "__main__":
+    print(f'='*5+" GCD " +'='*5)
+    print(gcd(20, 15))
+    
+    print(f'='*5+" Prime or Not " +'='*5)
+    print(checkPrime(12))

@@ -7,10 +7,8 @@ def isValid(s: str) -> str:
             stack.append(char) 
         elif not stack or map_[stack.pop()] != char:
             return "Invalid"
-    return "Valid" if not stack else "Invalid"
-        
-               
-    
-    
+    return # This line of code is using a ternary operator to determine the output of the function.
+    "Valid" if not stack else "Invalid"
+       
 s = '([{}])'
 print(isValid(s=s))
